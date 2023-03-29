@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+	<meta charset="utf-8">
+	<title> Tipos Var Let e Const</title>
+</head>
+<body>
+<script>
+var disciplina = "Fundamentos de Programação"; // global 
+
+function modificaDisciplina(){
+    disciplina = "Lógica de Programação"; 
+}    
+modificaDisciplina(); //chama a função
+if(true){
+	disciplina = "Programação Web!";
+}
+var i = 0; 
+while(i < 5){
+   disciplina = "Sistemas Operacionais!"; 
+   i++; 
+}
+
+{ // bloco
+  disciplina = "Gestão de Tempo!"; 
+}
+console.log(disciplina); 
+console.log("Escopo de Função do Tipo VAR");
+
+function media(n1,n2){
+	var med = (n1+n2)/2; // escopo de função
+	console.log(med); 
+} 
+media(7,8); //chamo a função
+//console.log(med); acesso negado
+var escola = "Lucas Emmanuel"; 
+console.log(escola); 
+var escola = "Amélia Figueiredo";//redeclaração da variável
+console.log(escola);
+
+console.log("----- Escopo do tipo LET -----"); 
+let professor = "João Victor"; // global
+function modProd(){
+	professor = "Rivânio"; 
+}
+modProd();
+if(true){
+	professor = "Francisco Dias";
+}
+console.log(professor); 
+function quadrado(valor){
+	let quad = valor * valor;
+	console.log(quad); //acesso ok!
+}
+quadrado(5); 
+//console.log(quad); //acesso negado
+{// escopo de bloco
+  let curso = "Administração"; 
+}
+// console.log(curso);
+if(true){
+	let salario = 1950;
+	console.log(salario); //acesso ok
+}
+let numero = 125;
+ numero = 130;
+    console.log(numero);  
+
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Tipos de Dados JS</title>
+</head>
+<body>
+    <script>
+    	// var text1 = "Lucas"; 
+    	// var text2 = "Oliveira"; 
+    	// alert(text1 + text2); 
+    	// var num = parseInt(window.prompt("Digite um número"));
+    	// var num2 = parseInt(window.prompt("Digite outro número"));
+    	// console.log(typeof(num)); 
+    	// num = parseInt(num); // converte para número inteiro
+    	// num2 = parseInt(num2); // converte para número inteiro
+    	// var soma = num + num2; 
+    	// console.log(soma); 
+
+    	console.log("Tipos inteiro e ponto flutuante são number no JS"); 
+
+    	let valorInt = 0; 
+    	let valorFloat = 25.5; 
+
+    	console.log(typeof(valorInt)); // tipos são number
+    	console.log(typeof(valorFloat)); // tipos são number
+
+    	console.log(parseInt(27.8)); // remove a parte fracionária
+        
+         var stringNum = "10"; 
+         stringNum = parseInt(stringNum);
+         alert(stringNum + 10); 
+    	console.log(typeof(stringNum)); 
+
+    	console.log("Tipo String");
+
+    	var string1 = ""; 
+    	console.log(typeof(string1)); 
+    	var string2 = "125"; 
+    	console.log(typeof(string2)); 
+    	var string3 = "Amélia";
+    	var TamString3 = string3.length; // pegar a quantidade de caracteres
+    	console.log(TamString3);  // 6 caracteres
+    	console.log(typeof(string3)); 
+
+    	console.log("Tipo Boolean(lógico)"); 
+    	var bool1 = true;
+    	var bool2 = false; 
+    	console.log(typeof(bool1));
+        console.log("-----------------------"); 
+        console.log(!!string1); // false
+        console.log(!!string2); // true
+        console.log(!!valorInt); // 0 -> false
+
+        var bol = 1220; 
+        console.log(Boolean(bol)); 
+        // console.log(!!bol);
+        if(bol){
+        	console.log("Execute os comandos!"); 
+        }else{
+        	console.log("Execute os comandos do else!"); 
+        }
+
+    	
+    </script>
+</body>
+</html>

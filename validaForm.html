@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title> Validar formulário com JS</title>
+    <style type="text/css">
+        div{
+            width: 150px;
+            height: 15px;
+            border: 1px solid black;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body onkeypress="teclaEnter()">
+    <form>
+        <p> Nome: <input type="text" id="nome" value="1800" readonly> </p>
+        <p> Senha: <input type="password"  id="senha"></p>
+        <p> <button type="button" onclick="getValues()"> validar </button> </p>
+        <hr> 
+        <p> Nome: <input type="text" id="getName" readonly> </p>
+        <p> Senha: <input type="text" id="getPass" readonly> </p>
+    </form>
+    <hr>
+        <section>
+           Nome<div id="val01"></div>
+           Senha<div id="val02"></div>
+        </section>
+    <hr>
+    <section>
+        <div id="texto01"> EEEP Amélia </div>
+        <div id="texto02"> A melhor </div>
+        <button type="button" onclick="getTexto()"> Obter texto </button>
+    </section>
+    <br>
+    <br>
+    <script>
+        function getValues(){
+            let nome = document.getElementById("nome").value; 
+            let senha = document.getElementById("senha").value;
+
+            document.getElementById("getName").value = nome;
+            document.getElementById("getPass").value = senha;  
+
+            // console.log("Nome:"+nome+' - Senha: '+senha); 
+            // alert("Nome:"+nome+' - Senha:'+senha); 
+        }
+
+        function teclaEnter(){
+            if(window.event.keyCode == 13){
+               let nome = document.getElementById("nome").value; 
+               let senha = document.getElementById("senha").value;
+                
+               document.getElementById("val01").innerHTML = nome;
+               document.getElementById("val02").innerHTML = senha;  
+            }
+        }
+
+        function getTexto(){
+            alert(document.getElementById("texto01").innerText);
+            alert(document.getElementById("texto02").innerText); 
+
+            // alert(document.getElementById("texto01").innerHTML);
+            // alert(document.getElementById("texto02").innerHTML);  
+        }
+        
+    </script>
+</body>
+</html>

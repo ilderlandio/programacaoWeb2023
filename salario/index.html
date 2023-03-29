@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Folha Salarial </title>
+	<style type="text/css">
+		#resultado{
+			width: 150px;
+			height: 20px;
+			background: cadetblue;
+			border: solid 1px goldenrod;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<p> Piso Salarial <input type="number" id="piso" value="1800" readonly> </p>
+		<p> Adicional de dependentes <input type="number" id="qdtDepend"> </p>
+		<p> Adicional para Professor(a) <input type="number" id="addProf"> </p>
+		<p> Desconto de Empréstimo <input type="number" id="emprest"> </p>
+		<p> <button type="button" onclick="CalSalaLiquido()"> Calcular </button> </p>
+	</form>
+    <section>
+    	Salário Líquido: <div id="resultado">  </div>
+    </section>
+	<script type="text/javascript">
+		function CalSalaLiquido() {
+			let piso = document.getElementById("piso").value; 
+			let AddDepend = document.getElementById("qdtDepend").value;
+			let AddProf = document.getElementById("addProf").value;
+			let DesEmprest = document.getElementById("emprest").value;
+
+			let CalAddDep = parseFloat((0.02 * AddDepend) * piso);
+			// console.log(CalAddDep); 
+
+			let CalAddProf =  parseFloat((AddProf / 100) * piso); 
+			// console.log(CalAddProf); 
+
+			let CalDesEmp = parseFloat((DesEmprest / 100) * piso); 
+			// console.log(CalDesEmp); 
+
+			let addDesc = CalAddDep + CalAddProf - CalDesEmp;
+			// console.log(addDesc); 
+
+			let salarioLiquido = parseFloat(piso) + addDesc; 
+			 // console.log(salarioLiquido); 
+            
+         document.getElementById("resultado").innerHTML = salarioLiquido; 
+		}
+	</script>
+</body>
+</html>
