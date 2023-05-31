@@ -1,0 +1,16 @@
+*{
+	margin: 0px !important;
+	box-sizing: border-box !important;
+	padding: 0px !important;
+}
+.carousel-item > img {
+	height: 60vh;
+}
+.carousel-caption > h5,p {
+	color: green;
+}
+.row > div[class*="col"]{
+	border:solid red 2px;
+}
+
+/*a[href*="tuts"]
